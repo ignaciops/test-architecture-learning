@@ -1,0 +1,9 @@
+services:
+  tests:
+    build: .
+    volumes:
+      - ./allure-results:/app/allure-results
+    environment:
+      - BLOG_URL=
+    network_mode: "host"
+    command: pytest tests/e2e/blog/ --alluredir=allure-results
