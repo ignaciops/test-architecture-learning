@@ -1,4 +1,5 @@
 from framework.ports.browser_port import BrowserPort
+from framework.adapters.locators.home_page_locators import HomePageLocators
 
 class NavigationScenario:
   """
@@ -12,4 +13,7 @@ class NavigationScenario:
     self._browser.navigate_to(url)
 
   def verify_home_loaded(self) -> bool:
-    return self._browser.is_visible('[data-testid="blog-title"]')
+    return self._browser.is_visible(HomePageLocators.siteTitle)
+
+  def verify_hero_section_visible(self) -> bool:
+    return self._browser.is_visible(HomePageLocators.heroImage)
