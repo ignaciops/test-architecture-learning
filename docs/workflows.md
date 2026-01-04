@@ -1,204 +1,193 @@
-# Workflows & Rhythms - Test Architecture Roadmap 2025
+# Workflows y Ritmos de Trabajo
 
-> Ritmos y procesos para mantener consistencia y calidad durante los 12 meses.
+Procesos y rutinas para mantener consistencia sin burnout durante el proyecto de aprendizaje 2026.
 
----
+**Filosofía**: Progreso sostenible > Intensidad insostenible
 
-## 📅 Weekly Rhythm (Semana Típica)
-
-### Distribución de Tiempo Base
-
-**Total semanal**: 12-15 horas
-
-| Día | Actividad Principal | Tiempo | Output | Notas |
-|-----|---------------------|--------|--------|-------|
-| **Lunes** | Estudio/Lectura | 2-3h | Entry en journal | Leer docs, artículos, conceptos |
-| **Martes** | Código ligero | 1-2h | Commits pequeños | Experimentos, spikes, refactors |
-| **Miércoles** | Estudio/Lectura | 2-3h | Entry en journal | Continuar aprendizaje conceptual |
-| **Jueves** | Código ligero | 1-2h | Commits pequeños | Implementar lo aprendido |
-| **Viernes** | Flexible | 0-2h | Variable | Recovery day si necesitas |
-| **Sábado** | Código intensivo | 4-6h | Features completas | Chunk largo, flow state |
-| **Domingo** | Review + Docs | 1-2h | Weekly review | Journal, planning, cleanup |
+**Última actualización**: 3 Enero 2026
 
 ---
 
-### Desglose por Actividad
+## 🎯 Principios Guía
 
-#### Lunes & Miércoles: Días de Estudio
+1. **Consistencia > Intensidad**: Mejor 1 hora diaria que 10 horas un día
+2. **Flexibilidad > Rigidez**: La vida pasa - ajustar sin culpa
+3. **Shipping > Perfección**: Código imperfecto en repo > código perfecto en tu cabeza
+4. **Aprendizaje público**: Documentar proceso, no solo resultados
+5. **Descanso intencional**: 1-2 días off por semana está bien
+
+---
+
+## 📅 Ritmo Semanal
+
+### Distribución realista de tiempo
+
+**Total semanal objetivo**: **8-12 horas** (no 15+)
+
+**Días de semana (Lun-Vie)**: 1-2 hrs después del trabajo
+**Fin de semana**: 2-4 hrs (sesión larga + review)
+**Días off**: Mínimo 1 día completo sin trabajar en el proyecto
+
+---
+
+### 🔄 Estructura flexible por día
+
+#### Lunes/Miércoles: Días de Estudio (opcional)
+
+**Duración**: 1-2 hrs
 **Objetivo**: Absorber conceptos, leer documentación
+**Output**: Notas en `scratch.md`
 
-**Estructura sugerida** (2-3 hrs):
-```
-19:00 - 19:15  Setup mental (café, ambiente)
-19:15 - 20:30  Lectura enfocada (docs, artículos, libro)
-20:30 - 20:40  Break
-20:40 - 21:30  Práctica hands-on (ejemplos pequeños)
-21:30 - 21:45  Notas en scratch.md
-```
+**Actividades**:
+- Leer docs oficiales (Playwright, Pytest, etc.)
+- Ver tutoriales/videos
+- Leer capítulos de libros del mes
+- Experimentos pequeños (no código productivo)
 
-**Output**:
-- Notas rápidas en `docs/scratch.md`
-- Código de práctica en `practice/` (si aplica)
-
-**NO hacer**:
-- ❌ Implementar features del framework
-- ❌ Escribir tests productivos
-- ❌ Multitasking (solo estudio)
+**Formato libre** - puede ser:
+- Lunes solo (2 hrs)
+- Lunes + Miércoles (1 hr cada uno)
+- Miércoles solo si lunes no pudiste
+- **Skip si no tienes energía** (recuperar en fin de semana)
 
 ---
 
-#### Martes & Jueves: Días de Código Ligero
-**Objetivo**: Experimentar, implementar pequeñas piezas
+#### Martes/Jueves: Días de Código (opcional)
 
-**Estructura sugerida** (1-2 hrs):
-```
-19:00 - 19:10  Review de lo aprendido ayer
-19:10 - 20:30  Coding (pequeños commits)
-20:30 - 20:45  Notas rápidas en scratch.md
-```
+**Duración**: 1-2 hrs
+**Objetivo**: Implementar pequeñas piezas, experimentar
+**Output**: 1-3 commits
 
-**Output**:
-- 1-3 commits pequeños
-- Spikes, experimentos, refactors menores
+**Actividades**:
+- Implementar scenario/adapter/test
+- Refactorizar código existente
+- Arreglar bugs
+- Experimentos con herramientas
 
-**Ejemplos**:
-- Agregar un método nuevo a un port
-- Refactorizar un locator
-- Experimentar con una fixture nueva
-
-**NO hacer**:
-- ❌ Features grandes (dejar para sábado)
-- ❌ Cambios arquitectónicos (necesitan más tiempo)
+**Regla importante**: **No features grandes** - esas van al sábado
 
 ---
 
-#### Sábado: Día de Flow (Código Intensivo)
-**Objetivo**: Implementar features completas, avanzar significativamente
+#### Viernes: Recovery Day
 
-**Estructura sugerida** (4-6 hrs):
+**Duración**: 0 hrs (día off)
+**Objetivo**: Descansar, recuperar energía
+
+**Permitido**:
+- ✅ Leer algo ligero (artículo corto)
+- ✅ Ver video de YouTube sobre el tema
+- ✅ Pensar en el proyecto (sin laptop)
+
+**No permitido**:
+- ❌ Coding
+- ❌ Escribir documentación
+- ❌ "Solo voy a hacer esto rapidito" (trampa mental)
+
+---
+
+#### Sábado: Día de Flow
+
+**Duración**: **2-4 hrs** (no 4-6 como antes)
+**Objetivo**: Feature completa, avance significativo
+**Output**: Feature funcionando + tests
+
+**Estructura sugerida**:
 ```
 09:00 - 09:15  Planning: ¿Qué voy a lograr hoy?
-09:15 - 11:00  Coding session 1
-11:00 - 11:15  Break (caminar, café)
-11:15 - 13:00  Coding session 2
-13:00 - 14:00  Lunch break
-14:00 - 15:30  Coding session 3 (o Testing/Refactor)
-15:30 - 16:00  Cleanup: commits, push, notas rápidas
+09:15 - 10:45  Coding session 1 (90 min)
+10:45 - 11:00  Break
+11:00 - 12:30  Coding session 2 (90 min)
+12:30 - 13:00  Cleanup: commits, push, notas
 ```
 
-**Output**:
-- Feature completa implementada
+**Alternativa flexible**:
+- Si perdiste días durante la semana → 3-4 hrs
+- Si ya avanzaste bien → 2 hrs suficiente
+- Si hay evento (lightning talk, reunión DgoTecHub) → **Skip o reduce a 1 hr**
+
+**Output típico**:
+- 1 feature completa (scenario + tests)
 - 5-10 commits
 - Tests pasando
-- Branch lista para merge (o mergeada)
-
-**Tips**:
-- Apagar notificaciones
-- Música sin letra o silencio
-- Tener agua/snacks a la mano
-- NO revisar redes sociales
-
-**NO hacer durante estas horas**:
-- ❌ Leer artículos nuevos (distraen del flow)
-- ❌ Saltar entre features (enfócate en 1)
-- ❌ Perfeccionismo (progreso > perfección)
 
 ---
 
-#### Domingo: Día de Reflexión
-**Objetivo**: Revisar semana, documentar aprendizajes, planear siguiente semana
+#### Domingo: Día de Review
 
-**Estructura sugerida** (1-2 hrs):
+**Duración**: 1-2 hrs
+**Objetivo**: Reflexión, documentación, planning
+**Output**: Journal entry, scratch migrado
+
+**Estructura sugerida**:
 ```
-17:00 - 17:30  Review del código de la semana
+17:00 - 17:30  Review de código de la semana
 17:30 - 18:15  Migrar scratch.md → learning-journal.md
-18:15 - 18:45  Planning semana siguiente
-18:45 - 19:00  Cleanup: borrar scratch migrado
+18:15 - 18:45  Planning semana siguiente (mental o escrito)
+18:45 - 19:00  Cleanup: purgar scratch.md
 ```
 
-**Output**:
-- Entry semanal en `learning-journal.md`
-- `scratch.md` limpio (migrado lo importante)
-- Plan de la próxima semana (mental o escrito)
-
-**Template de review**:
+**Template de weekly review**:
 ```markdown
 ## YYYY-MM-DD | Week XX Review
 
-**Tiempo invertido**: Xh | **Tags**: #week-review
+**⏱️ Tiempo esta semana**: ~X hrs
+**🏷️ Tags**: #week-review
 
-### 🏆 Logros de la semana
+### 🏆 Logros
 - Commits: X
 - Tests escritos: X
-- Features completadas: X
+- Aprendizajes clave: [1-2 bullets]
 
-### 💡 Aprendizajes clave
-- Concepto 1
-- Concepto 2
-
-### 🚧 Obstáculos encontrados
-- Problema X → Solución Y
-
-### 🎯 Disciplina check
-- ¿Escribí código sin entenderlo? SÍ/NO
-- ¿Usé Copilot? NO ✅
-- ¿Hice coding challenge sin ayuda? SÍ/NO
+### 🚧 Obstáculos
+- [Si hubo alguno]
 
 ### ➡️ Próxima semana
-- Prioridad 1
-- Prioridad 2
-
----
+- Prioridad 1: [Feature/concepto principal]
+- Prioridad 2: [Secundario]
 ```
 
+**Alternativa mínima** (si no tienes 2 hrs):
+- 30 min: Solo migrar scratch → journal
+- Skip planning formal (hazlo mental)
+
 ---
 
-## 📝 Sistema de 3 Niveles de Notas
+## 📝 Sistema de Documentación
 
 ### Nivel 1: scratch.md (Captura Rápida)
 
 **Propósito**: Notas ultra-rápidas durante el trabajo
 **Tiempo**: 10-30 segundos por nota
-**Estructura**: Ninguna (raw, bullets, lo que sea)
-**Permanencia**: Temporal (se migra o borra semanalmente)
-
-**Cuándo usar**:
-- Durante coding: encontraste algo interesante
-- Durante lectura: aha moment
-- Durante debugging: solución a un bug
-- Cualquier pensamiento que quieras capturar SIN romper flow
+**Estructura**: Ninguna (libre, bullets, lo que sea)
+**Cleanup**: Semanal (domingos)
 
 **Ejemplo**:
 ```markdown
-## 2024-12-22 14:30
-Playwright tiene .first y .last para múltiples matches.
-Para elemento único usar directamente locator().
+# Scratch Notes
 
-## 2024-12-23 10:15
-Bug: HomePageLocators.BLOG_TITLE no funciona si el componente
-no tiene data-testid. Verificar SIEMPRE en el HTML.
+---
+03/01/2026
+- 1 Scenario = 1 Use Case
+- Ramificaciones del UC → incluir en clase + parametrizar test
+- Bug: NavigationScenario recibe URL 🤔
+
+04/01/2026
+✅ Arreglado bug NavigationScenario
+Idea: ¿BaseScenario con métodos comunes?
 ```
 
-**NO escribir**:
-- ❌ Análisis profundos (dejar para journal)
-- ❌ Formato fancy (es temporal)
-- ❌ Código completo (usar comments en el código mismo)
+**Filosofía**: Escribe sin pensar. Migra lo bueno. Borra el resto.
 
 ---
 
 ### Nivel 2: learning-journal.md (Aprendizaje Formal)
 
 **Propósito**: Documentar aprendizajes con estructura
-**Tiempo**: 10-30 minutos por entry
-**Estructura**: Template definido
-**Permanencia**: Permanente (no se borra nunca)
+**Tiempo**: ≤30 min por entry
+**Frecuencia**: 1-2x por semana (no diario)
+**Permanencia**: Permanente
 
-**Cuándo usar**:
-- Domingos (weekly review)
-- Después de aprender algo importante
-- Cuando terminas un módulo/concepto
-
-**Template**:
+**Template** (ya lo tienes, es bueno):
 ```markdown
 ## YYYY-MM-DD | Título Descriptivo
 
@@ -212,437 +201,365 @@ no tiene data-testid. Verificar SIEMPRE en el HTML.
 - Concepto 2
 
 ### 🎯 Aplicación inmediata
-Cómo lo uso en mi proyecto
+Cómo lo usarás en el proyecto
 
 ### ❓ Dudas pendientes
-Preguntas que aún tengo
+Preguntas que aún tienes
 
 ### ➡️ Next
 Siguiente paso de aprendizaje
-
----
 ```
 
-**Fuentes comunes**:
-- Migración desde `scratch.md`
-- Reflexión después de coding session
-- Lectura de artículos/docs
-- Debugging de problemas complejos
+**Cuándo escribir**:
+- Domingos (weekly review)
+- Después de aprender algo importante
+- **Solo si vale la pena** (no forzar entradas)
 
 ---
 
-### Nivel 3: architecture/decisions.md (ADRs)
+### Nivel 3: ADRs (Decisiones Arquitectónicas)
 
-**Propósito**: Documentar decisiones arquitectónicas importantes
-**Tiempo**: 1-2 horas por ADR
-**Estructura**: Formato ADR (Architecture Decision Record)
-**Permanencia**: Permanente, alta calidad
+**Propósito**: Documentar decisiones importantes
+**Tiempo**: 30-60 min por ADR
+**Frecuencia**: 1-2x por mes (no más)
 
-**Cuándo usar**:
-- Decisión arquitectónica significativa
-- Trade-offs importantes
-- Cambios que afectan estructura del proyecto
+**Cuándo crear**:
+- Cambio arquitectónico significativo
+- Elección de herramienta principal
+- Decisión que afecta múltiples meses
+- Cuando necesites linkear desde código
 
-**Template**:
-```markdown
-## ADR-XXX: Título de la Decisión
-
-**Fecha**: YYYY-MM-DD
-**Status**: 🤔 Proposed | ✅ Accepted | ❌ Rejected | ⚠️ Deprecated
-
-### Contexto
-¿Qué problema estamos resolviendo?
-
-### Decisión
-¿Qué decidimos hacer?
-
-### Consecuencias
-
-**Positivas**:
-- ✅ Pro 1
-- ✅ Pro 2
-
-**Negativas**:
-- ⚠️ Con 1
-- ⚠️ Con 2
-
-### Alternativas Consideradas
-- Opción A: Por qué se rechazó
-- Opción B: Por qué se rechazó
-
-### Referencias
-- Link 1
-- Link 2
-
----
-```
-
-**Ejemplos de decisiones que merecen ADR**:
-- Usar arquitectura hexagonal
-- Organizar tests por SUT vs por tipo
-- Estrategia de branching (mes por branch)
-- Desactivar Copilot durante aprendizaje
+**Usar tu template actual** (`docs/architecture/decisions/template.md`)
 
 ---
 
-### Flujo Entre Niveles
-```
-Durante el día/semana:
-    ↓
-scratch.md (notas rápidas)
-    ↓ (migrar domingos)
-learning-journal.md (entradas formales)
-    ↓ (cuando hay decisión arquitectónica)
-architecture/decisions.md (ADRs)
-```
+## 🗓️ Ritmo Mensual
 
-**Ejemplo de flujo**:
-```
-Lunes: Leo sobre hexagonal architecture
-  → scratch.md: "Ports son interfaces, adapters son implementaciones"
+### Semana 1: Setup + Exploración
 
-Miércoles: Implemento BrowserPort
-  → scratch.md: "ABC en Python = abstract class"
-
-Sábado: Implemento framework completo
-  → scratch.md: "Separar locators de adapters funciona bien"
-
-Domingo: Weekly review
-  → learning-journal.md: Entry completo sobre hexagonal
-  → Migro ideas de scratch.md
-  → Borro lo migrado de scratch.md
-
-Lunes siguiente: Decido usar hexagonal para todo el año
-  → architecture/decisions.md: ADR-001 sobre hexagonal
-```
-
----
-
-## 🗓️ Monthly Rhythm (Ritmo Mensual)
-
-### Semana 1: Setup + Aprendizaje Base
-**Enfoque**: Estudiar conceptos del mes, experimentar
+**Objetivo**: Entender conceptos del mes, experimentar
 
 **Actividades**:
-- Leer sobre el tema principal del mes
-- Crear branch del mes: `git checkout -b month-XX/topic`
-- Implementar spikes/experimentos
-- Notas en scratch.md → journal dominical
+- Leer sobre tema principal del mes
+- Crear branch: `git checkout -b month-XX-topic`
+- Experimentos y spikes
+- Notas en scratch/journal
 
-**Output esperado**:
-- Conocimiento conceptual sólido
-- Experimentos en `practice/` o similar
-- Plan de implementación
+**Output**:
+- Entendimiento conceptual
+- Plan de implementación claro
 
 ---
 
 ### Semana 2: Implementación Core
-**Enfoque**: Escribir el código principal del mes
+
+**Objetivo**: Escribir código principal del framework
 
 **Actividades**:
-- Implementar ports/adapters/scenarios nuevos
-- Escribir primeros tests
-- Commits frecuentes, pequeños
-- Sábado = feature grande
+- Implementar ports/adapters/scenarios
+- Escribir primeros tests (3-5)
+- Commits frecuentes y pequeños
+- Sábado = feature completa
 
-**Output esperado**:
+**Output**:
 - Framework evolucionado
-- 3-5 tests nuevos
-- Código funcionando básico
+- 3-5 tests funcionando
+- Estructura básica completa
 
 ---
 
-### Semana 3: Refinamiento + Merge
-**Enfoque**: Pulir, testear, preparar para producción
+### Semana 3: Refinamiento
+
+**Objetivo**: Completar tests, pulir código
 
 **Actividades**:
-- Agregar tests faltantes
+- Agregar tests faltantes (total 6-8)
 - Refactorizar código
 - Documentar (README del mes)
-- Merge a main
+- Preparar para merge
 
-**Output esperado**:
-- 8-10 tests completos
-- Código limpio, con docstrings
-- Branch mergeada a main
-- Tag del mes: `git tag -a v1.0-month-01`
+**Output**:
+- 6-8 tests completos (75-100% del target)
+- Código limpio
+- Branch lista para merge
 
 ---
 
-### Semana 4: Documentación + Publicación
-**Enfoque**: Blog post, retro, talk prep (si aplica)
+### Semana 4: Documentación + Cierre
+
+**Objetivo**: Retrospectiva, blog, merge
 
 **Actividades**:
-- Escribir blog post draft
-- Completar retrospectiva mensual
-- Preparar talk (meses con presentación)
-- Publicar blog post
-- Anunciar en redes
+- Escribir retrospectiva mensual
+- Merge branch a main
+- Tag del mes: `git tag month-XX-topic`
+- Comenzar blog post (si aplica)
+- Prep de talk (si es mes con presentación)
 
-**Output esperado**:
-- Blog post publicado
-- Retrospectiva en `months/month-XX/`
-- Talk lista (si aplica)
-- Proyecto anunciado públicamente
+**Output**:
+- Retrospectiva completa
+- Branch mergeada
+- Blog post draft (publicar en primeros días del siguiente mes)
 
 ---
 
-## 🔄 Workflow de Git (Branching)
+## 🌿 Sistema de Branches
 
-### Branch Strategy
+### Estrategia (desde Mes 1)
 ```
 main
-  ├── month-01/foundations    (ene)
-  ├── month-02/architecture   (feb)
-  ├── month-03/contracts      (mar)
+  ├── month-01-foundations
+  ├── month-02-architecture
+  ├── month-03-contracts
   └── ...
 ```
 
-### Durante el Mes
+### Workflow del mes
 ```bash
-# Inicio del mes
+# Inicio del mes (Semana 1)
 git checkout main
 git pull
-git checkout -b month-01/foundations
+git checkout -b month-01-foundations
 
-# Durante el mes - commits pequeños y frecuentes
+# Durante el mes - commits pequeños frecuentes
 git add .
 git commit -m "feat: add BrowserPort interface"
-git push origin month-01/foundations
+git push origin month-01-foundations
 
-# Commits incrementales
-git commit -m "feat: add PlaywrightAdapter"
-git commit -m "test: add home page tests (3 tests)"
-git commit -m "refactor: centralize locators"
+# Más commits incrementales
+git commit -m "feat: implement PlaywrightAdapter"
+git commit -m "test: add home page navigation tests (3 tests)"
+git commit -m "refactor: centralize common locators"
 
-# Semana 3 - preparar merge
-git commit -m "docs: add month-01 README"
-git commit -m "retro: complete month-01 retrospective"
+# Semana 3-4 - preparar cierre
+git commit -m "docs: update month-01 README with progress"
+git commit -m "docs: complete month-01 retrospective"
 
-# Merge a main
+# Semana 4 - merge
 git checkout main
-git merge month-01/foundations
-git tag -a v1.0-month-01 -m "Month 01: Foundations complete"
+git merge month-01-foundations
+git tag month-01-foundations
 git push origin main --tags
 
-# Opcional: borrar branch (o mantener como referencia)
-# git branch -d month-01/foundations
+# Opcional: mantener branch como referencia histórica
+# (no borrar - útil para ver evolución)
 ```
 
-### Commit Conventions
+### Convenciones de commits
+
+**Formato**: `<type>: <description>`
+
+**Types**:
+- `feat`: Nueva funcionalidad
+- `test`: Agregar/modificar tests
+- `refactor`: Cambio de código sin cambiar funcionalidad
+- `docs`: Solo documentación
+- `fix`: Corrección de bugs
+- `chore`: Tareas de mantenimiento
+
+**Ejemplos**:
 ```bash
-# Features
-feat: add [component]
-feat(framework): add BrowserPort interface
-feat(tests): add blog E2E suite
-
-# Tests
-test: add [suite]
-test(e2e): add home page tests
-test(api): add users CRUD tests
-
-# Refactor
-refactor: improve [component]
-refactor(adapter): simplify error handling
-
-# Docs
-docs: update [document]
-docs(monthly): add month-01 README
-docs(retro): complete retrospective
-
-# Chore
-chore: update dependencies
-chore(ci): optimize pipeline
-
-# Fix
-fix: resolve [issue]
-fix(tests): flaky test in blog navigation
+feat: add NavigationScenario with go_to methods
+test: add 3 tests for blog navigation
+refactor: extract common locators to separate file
+docs: update month-01 README
+fix: resolve flaky test in home page
+chore: update pytest to 8.3.4
 ```
+
+**Regla**: Commits pequeños y frecuentes > commits gigantes
 
 ---
 
-## 🎯 Accountability Checkpoints
+## ⚡ Manejo de Imprevistos
 
-### Daily (Opcional)
-- Quick note en `scratch.md` si hay insight
-- Commit si hubo código
+### Cuando pierdes días (enfermedad, trabajo, familia)
 
-### Weekly (Obligatorio - Domingos)
-```markdown
-## Checklist Semanal
+**1-2 días perdidos**:
+- ✅ Recuperar en fin de semana (agregar 1 hr extra)
+- ✅ Seguir con el plan normal
 
-- [ ] Tiempo invertido esta semana: ___ horas
-- [ ] Commits realizados: ___
-- [ ] Tests escritos: ___
-- [ ] scratch.md migrado a journal: ✅
-- [ ] Planning próxima semana: ✅
+**3-4 días perdidos**:
+- ✅ Sábado = recuperación (3-4 hrs en vez de 2-3)
+- ✅ Reducir scope si es necesario (6 tests en vez de 8)
 
-### Disciplina Check
-- [ ] ¿Usé Copilot? NO ✅
-- [ ] ¿Escribí código sin entenderlo? NO ✅
-- [ ] ¿Hice coding challenge? SÍ/NO
-```
+**1 semana completa perdida**:
+- ✅ Reducir scope del mes (50%)
+- ✅ Enfocarse en lo esencial: 1 feature + 3-4 tests + retrospectiva
+- ✅ NO intentar "catch up" - solo te quemarás
 
-### Monthly (Obligatorio - Última Semana)
-```markdown
-## Checklist Mensual
-
-### Código
-- [ ] Framework evolucionado (ports/adapters/scenarios)
-- [ ] Tests nuevos: ___ (target: 8-10)
-- [ ] Tests viejos siguen pasando: ✅
-- [ ] README del mes actualizado
-- [ ] Branch mergeada a main
-- [ ] Tag creado: vX.0-month-XX
-
-### Documentación
-- [ ] Learning journal actualizado
-- [ ] Retrospectiva mensual completa
-- [ ] Blog post draft terminado
-- [ ] Blog post publicado
-
-### Presentaciones (si aplica)
-- [ ] Lightning talk preparada
-- [ ] Talk presentada
-- [ ] Video obtenido
-
-### Publicación
-- [ ] Proyecto anunciado (Twitter/LinkedIn)
-- [ ] Repo actualizado en GitHub
-```
+**Filosofía**: **Mejor entregar menos bien hecho que abandonar el proyecto**
 
 ---
 
-## 🚨 Red Flags & Recovery
+### Días con eventos especiales
 
-### Señales de Alerta
+**Lightning talk ese día**:
+- ❌ No planees coding ese día
+- ✅ Usa el día para preparación final de la talk
+- ✅ Recupera horas otro día
 
-**🔴 Red Flag 1**: Más de 3 días sin commits
-- **Acción**: Hacer commit pequeño (aunque sea docs)
-- **Root cause**: ¿Bloqueado? ¿Falta de tiempo? ¿Perfeccionismo?
+**Reunión DgoTecHub**:
+- ❌ No planees sesión larga
+- ✅ Máximo 1 hr de código ligero
+- ✅ Cuenta como "día de comunidad" (también es parte del proyecto)
 
-**🔴 Red Flag 2**: Escribiste código que no entiendes
-- **Acción**: STOP. Borrar y reescribir manualmente
-- **Root cause**: ¿Usaste Copilot? ¿Copy-paste de Claude?
-
-**🔴 Red Flag 3**: Semana completa sin estudiar
-- **Acción**: Mini-session de 1 hora en fin de semana
-- **Root cause**: ¿Trabajo pesado? ¿Burnout?
-
-**🔴 Red Flag 4**: Journal vacío por 2+ semanas
-- **Acción**: Write now session de 30 min
-- **Root cause**: ¿Perdiste el hábito? ¿Falta de reflexión?
+**Compromiso familiar**:
+- ✅ Skip sin culpa
+- ✅ Recupera si puedes, si no, ajusta scope
 
 ---
 
-### Recovery Protocols
+## 📊 Métricas de Éxito
 
-**Si te atrasas 1 semana**:
+### Semanales (informal)
+
+- ⏱️ **Tiempo**: 8-12 hrs
+- 💻 **Commits**: 3-10
+- ✅ **Tests**: 1-3 nuevos
+- 📝 **Journal**: 1 entry (mínimo)
+
+**No obsesionarse** - son guías, no mandatos
+
+---
+
+### Mensuales (tracking formal)
+
+| Métrica | Target | Mínimo Aceptable |
+|---------|--------|------------------|
+| Tiempo invertido | 40-50 hrs | 30 hrs |
+| Commits | 15-30 | 10 |
+| Tests escritos | 8-10 | 6 |
+| Journal entries | 4-6 | 2 |
+| Blog posts | 1 | 1 (draft ok) |
+| Retrospectiva | 1 | 1 |
+| Talk (si aplica) | 1 | 1 |
+
+**En retrospectiva mensual**: Trackear real vs target, ajustar expectations
+
+---
+
+## 🚨 Red Flags y Recuperación
+
+### Señales de alerta
+
+**🔴 Sin commits por 1 semana**:
+- Hacer commit aunque sea de docs
+- Identificar blocker
+
+**🔴 Escribiste código que no entiendes**:
+- STOP. Borrar. Reescribir manualmente
+- Entender > velocidad
+
+**🔴 Journal vacío por 2+ semanas**:
+- Session de 30 min solo de journal
+- ¿Perdiste el hábito de reflexión?
+
+**🔴 Te sientes quemado**:
+- **Recovery week**: Reducir a 50% del tiempo
+- Solo lo esencial (1-2 hrs/semana)
+- Está bien tomar break de 1 semana
+
+---
+
+### Recovery protocol (si vas MUY atrasado)
 ```markdown
-## Recovery Plan - 1 Week Behind
+## Recovery Plan
+
+**STOP. Breathe. Evaluate.**
 
 Prioridad 1 (Must have):
 - [ ] 1 feature core implementada
-- [ ] 3 tests mínimos
-- [ ] 1 entry en journal
+- [ ] 3-4 tests funcionando
+- [ ] Retrospectiva escrita (aunque sea breve)
 
 Prioridad 2 (Nice to have):
+- [ ] Tests extras (hasta 8)
 - [ ] Refactors
-- [ ] Tests extras
-- [ ] Docs extensas
+- [ ] ADR formal
 
-Skip si es necesario:
-- ❌ Blog post (publicar parcial o posponer)
-- ❌ Coding challenges extras
+Skip temporal:
+- ❌ Blog post detallado (draft rápido ok)
 - ❌ Perfeccionismo en código
-```
+- ❌ Documentación exhaustiva
 
-**Si te atrasas 2+ semanas**:
-```markdown
-## Recovery Plan - 2+ Weeks Behind
-
-STOP. Breath. Evaluate.
-
-1. ¿Es problema de tiempo? → Ajustar expectativas del mes
-2. ¿Es problema de energía? → Recovery week (reduce scope)
-3. ¿Es problema de interés? → Re-evaluar roadmap
-
-Acción:
-- Reduce scope del mes actual (50% menos tests)
-- Mantén lo esencial: 1 feature + 3 tests + 1 retro
-- No intentes "catch up" el mes siguiente (burnout)
-- Ajusta plan going forward
+**Regla**: Mejor entregar 50% bien hecho que 0%
 ```
 
 ---
 
-## 💪 Mantener Momentum
+## 💡 Tips Anti-Burnout
 
-### Técnicas Anti-Burnout
+### Energy Management
 
-**🔋 Energy Management**:
-- No coder más de 6 horas en un día
-- Breaks cada 90 min
-- Un día completo off por semana (viernes o domingo)
+- ✅ Máximo 4 hrs de código en un día
+- ✅ Breaks cada 90 min (Pomodoro o similar)
+- ✅ 1-2 días completos off por semana
+- ✅ Si estás cansado → skip o reduce tiempo (no forzar)
 
-**🎯 Motivation Hacks**:
-- Visualizar: "En diciembre 2025, soy Test Architect"
-- Reread `my-commitments.md` cuando dudes
-- Celebrar wins pequeños (commit, test pasando, insight)
+### Motivation Hacks
 
-**👥 Social Accountability**:
-- Anunciar progreso en redes (mensual)
-- Compartir blog posts públicamente
-- Accountability partner (check-ins mensuales)
+- 🎯 Reeler `my-commitments.md` cuando dudes
+- 🏆 Celebrar wins pequeños (test pasando, commit, insight)
+- 📊 Ver git graph crecer: `git log --graph --oneline`
+- 👥 Compartir progreso públicamente (accountability)
 
-**📊 Track Progress**:
-- Git graph visual: `git log --graph --oneline`
-- Ver crecer el número de tests
-- Reler retrospectivas pasadas
+### Flexibility
+
+- ✅ Ajustar workflows según aprendes
+- ✅ Revisar este documento cada mes
+- ✅ Cambiar lo que no funciona **sin culpa**
+
+**Filosofía**: Este documento te sirve a ti, no tú a este documento
 
 ---
 
-## 🎓 Learning Philosophy
+## 🎓 Aprendizaje sin Atajos
 
-### Principios Guía
+### Reglas de Disciplina
 
-1. **Progreso > Perfección**
-   - 1 test imperfecto > 0 tests perfectos
-   - Iterar, no esperar el código perfecto
+1. **NO Copilot** durante el proyecto
+   - Escribes cada línea manualmente
+   - Entiendes lo que escribes
 
-2. **Entendimiento > Velocidad**
-   - Mejor tardar 2 horas entendiendo que 10 min copy-pasting
-   - Si no puedes explicarlo, no lo entiendes
+2. **NO Copy-Paste ciego**
+   - De Claude, Stack Overflow, o tutoriales
+   - Puedes inspirarte, pero reescribe en tus palabras
 
-3. **Consistencia > Intensidad**
-   - 2 horas/día durante 7 días > 14 horas en 1 día
-   - El aprendizaje necesita tiempo de procesamiento
+3. **Coding challenges semanales** (opcional pero recomendado)
+   - 1x por semana, 30-60 min
+   - Sin ayuda de AI
+   - Valida que realmente aprendes
 
-4. **Público > Privado**
-   - Aprender en público genera accountability
-   - Compartir = solidificar conocimiento
-   - Feedback de comunidad = crecimiento acelerado
+### Filosofía
 
-5. **Disciplina > Motivación**
-   - La motivación es temporal
-   - La disciplina es un sistema
-   - Los hábitos > emociones del día
+> "Si no puedes explicarlo con tus palabras, no lo entiendes"
+> "Tardar 2 horas entendiendo > 10 min copy-pasting"
 
 ---
 
 ## 📚 Quick Reference
 
-### Files to Check
+### ¿Qué hacer hoy?
 
-| Cuándo | Archivo | Por Qué |
-|--------|---------|---------|
-| Inicias sesión | `my-commitments.md` | Recordar reglas |
-| Durante coding | `scratch.md` | Capturar ideas |
+| Día | Actividad Principal | Duración | Flexible? |
+|-----|---------------------|----------|-----------|
+| Lun/Mié | Estudio | 1-2 hrs | ✅ Sí |
+| Mar/Jue | Código ligero | 1-2 hrs | ✅ Sí |
+| Vie | OFF | 0 hrs | ❌ Respetar |
+| Sáb | Flow (código) | 2-4 hrs | ⚠️ Ajustar según necesidad |
+| Dom | Review + Journal | 1-2 hrs | ⚠️ Mínimo 30 min |
+
+### Archivos a revisar
+
+| Cuándo | Archivo | Para qué |
+|--------|---------|----------|
+| Antes de sesión | `months/month-XX/README.md` | Ver qué checkboxes atacar |
+| Durante sesión | `scratch.md` | Capturar ideas rápidas |
 | Domingos | `learning-journal.md` | Migrar y reflexionar |
-| Fin de mes | `months/month-XX/retro.md` | Retrospectiva |
-| Duda arquitectónica | `architecture/decisions.md` | Ver decisiones pasadas |
+| Fin de mes | `RETROSPECTIVE.md` | Cerrar el mes |
 
-### Commands to Run
+### Comandos útiles
 ```bash
 # Ver progreso semanal
 git log --since="1 week ago" --oneline
@@ -650,40 +567,24 @@ git log --since="1 week ago" --oneline
 # Contar commits del mes
 git log --since="1 month ago" --oneline | wc -l
 
-# Ver tests
+# Ver tests disponibles
 pytest tests/ --collect-only
 
-# Status general
-git status
+# Branch actual
+git branch --show-current
 ```
 
 ---
 
-## 🎯 Success Metrics
+## 🔄 Revisión de este Documento
 
-### Weekly
-- ⏱️ Tiempo invertido: 12-15 hrs
-- 💻 Commits: 5-10
-- ✅ Tests escritos: 1-3
-- 📝 Journal entries: 1 (mínimo)
+- **Mensual**: En retrospectiva - ¿workflows funcionando?
+- **Trim human (cada 3 meses)**: Review profundo - ¿ajustar algo?
+- **Anual**: Gran review - ¿qué aprendiste sobre tu forma de trabajar?
 
-### Monthly
-- ⏱️ Tiempo invertido: 50-60 hrs
-- 💻 Commits: 20-30
-- ✅ Tests escritos: 8-10
-- 📝 Journal entries: 4-6
-- 📄 Blog posts: 1
-- 🎤 Talks: 0-1 (según mes)
-
-### Annual (Goal)
-- ⏱️ Tiempo invertido: ~600 hrs
-- 💻 Commits: 250-350
-- ✅ Tests escritos: 80-100
-- 📝 Journal entries: 50-60
-- 📄 Blog posts: 15
-- 🎤 Talks: 7
+**Regla de oro**: Si algo no te sirve, cámbialo. Este documento evoluciona contigo.
 
 ---
 
-**Última actualización**: 22 Diciembre 2024
-**Revisión**: Ajustar según retrospectivas mensuales
+**Última actualización**: 3 Enero 2026
+**Próxima revisión**: 31 Enero 2026 (fin de Mes 1)

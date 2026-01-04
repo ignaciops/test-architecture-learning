@@ -6,7 +6,7 @@
 
 ---
 
-## 2024-12-21 | Hexagonal Architecture - First Contact
+## 2025-12-21 | Hexagonal Architecture - First Contact
 
 **⏱️ Tiempo**: 2h | **📚 Fuente**: Alistair Cockburn + Uncle Bob blogs | **🏷️ Tags**: #architecture #patterns #foundations
 
@@ -40,7 +40,7 @@ Leer sobre Dependency Injection en Python para entender mejor las fixtures de py
 
 ---
 
-## 2024-12-22 | Playwright Auto-waiting
+## 2025-12-22 | Playwright Auto-waiting
 
 **⏱️ Tiempo**: 2h | **📚 Fuente**: Playwright Python Docs | **🏷️ Tags**: #playwright #e2e #tools
 
