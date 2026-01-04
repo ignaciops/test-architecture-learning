@@ -1,9 +1,9 @@
 [project]
-name = "test-architecture-roadmap"
+name = "test-architecture-learning"
 version = "0.1.0"
 description = "Roadmap de aprendizaje de 12 meses para arquitectura de pruebas"
 authors = [
-  {name = "Ignacio", email = "contacto@ignaciops.dev"}
+  {name = "Ignacio PS", email = "contacto@ignaciops.dev"}
 ]
 requires-python = ">=3.14"
 dependencies = [
@@ -27,8 +27,18 @@ testpaths = ["tests"]
 python_files = ["test_*.py"]
 python_classes = ["Test*"]
 python_functions = ["test_*"]
+markers = [
+  "smoke: Smoke tests",
+  "e2e: End-to-end tests",
+  "api: API tests",
+  "critical: Critical path tests"
+]
 addopts = [
     "-v",
     "--tb=short",
     "--strict-markers",
+    "--alluredir=allure-results",
+    "--screenshot=only-on-failure",
+    # "--headed", # Quitar comentario para ver navegador durante ejecución de pruebas
+    # "--slowmo=100", # Quitar comentario para ralentizar la ejecución de pruebas
 ]
