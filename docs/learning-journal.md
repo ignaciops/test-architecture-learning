@@ -68,6 +68,34 @@ Leer sobre Dependency Injection en Python para entender mejor las fixtures de py
 Allure reporting: cómo agregar steps, screenshots automáticos en fallos, y categorización.
 
 ---
+## 2026-01-06 | Domain Driven Design
+
+**⏱️ Tiempo**: 2h | **📚 Fuente**: Architecture Patterns with Python | **🏷️ Tags**: #architecture #ddd
+
+### 💡 Main Takeaway
+> "Los sistemas de software tienden al caos"
+
+### 🔑 Conceptos clave
+- Sistemas de software caóticos se caracterizan por funciones que no están claramente separadas en cuanto a responsabilidades.
+- Encapsular el comportamiento mediante el uso de abstracciones es una herramienta poderosa para crear código más expresivo, más testeable y más fácil de mantener.
+- El modelo de dominio es el mapa mental que los dueños de negocios tienen de su negocio.
+
+### 🎯 Aplicación inmediata
+Una arquitectura hexagonal es una "forma" de aplicar Domain Driven Design. Se logra la separación del dominio de negocio a nivel software. Donde se aplica el principio de inversión de dependencia.
+
+La aplicación de DDD se verá reflejada en que los métodos del código van a reflejar el lenguaje del negocio de pruebas (acciones y expectativas), no los detalles técnicos de la herramienta usada.
+
+Ejemplos:
+- "navigate_to_blog" (no "click_blog_link")
+- "verify_post_is_visible" (no "assert_element_exists")
+
+### ❓ Dudas pendientes
+N/A
+
+### ➡️ Next
+
+
+---
 
 <!--
 Template para futuras entradas:
