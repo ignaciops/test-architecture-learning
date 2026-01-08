@@ -11,7 +11,7 @@ Al implementar locators centralizados (ADR-002), surge la pregunta de cómo orga
 **Escenario específico**: Elementos como logo del blog, navbar y footer aparecen en TODAS las páginas.
 
 **Opciones:**
-1. **Duplicar en cara archivo de página**
+1. **Duplicar en cada archivo de página**
 - `home_page_locators.py` tiene `siteLogo`
    - `blog_page_locators.py` tiene `siteLogo` (duplicado)
    - `post_page_locators.py` tiene `siteLogo` (duplicado)
@@ -24,7 +24,7 @@ Al implementar locators centralizados (ADR-002), surge la pregunta de cómo orga
 
 ## Decisión
 
-Crear **`common_locators.py`** para elementos que aparecen en 2 o más páginas con el mismo propósito.
+Crear **`common_locators.py`** para elementos que aparecen en 2 o más páginas con el mismo propósito. Además de crear archivos separados en caso de existir Componentes reutilizables.
 
 ### Regla de Decisión
 
@@ -33,15 +33,13 @@ Un locator va a `common_locators.py` si cumple **AMBOS** criterios:
 1. Aparece en **2 o más páginas**
 2. Tiene el **mismo propósito** en todas ellas
 
-### Estructura Implementada
-```
-framework/adapters/locators/
-├── __init__.py
-├── common_locators.py       # Navbar, footer, logo
-├── home_page_locators.py    # Hero, featured posts (solo en home)
-├── blog_page_locators.py    # Post list, (solo en blog)
-└── post_page_locators.py    # Post content, metadata (solo en posts)
-```
+### Principio Aplicado
+
+**Componente reutilizable = Archivo separado**
+
+- PostMetadata se reutiliza en 4 contextos → archivo propio
+- PostCard se reutiliza en 2 contextos → archivo propio
+- FeaturedPost solo existe en Home → vive en `home_page_locators.py`
 
 ---
 
@@ -75,22 +73,15 @@ framework/adapters/locators/
 | `navbarBlogLink` | Link a blog en navbar (todas las páginas) |
 | `footerContainer` | Footer en todas las páginas |
 
-### Elementos en `home_page_locators.py`
+### Decisión de Organización para archivos de componentes
 
-| Elemento | Justificación |
-|----------|---------------|
-| `heroTitle` | Solo aparece en home |
-| `heroSubtitle` | Solo aparece en home |
-| `featuredSection` | Solo aparece en home |
-| `featuredPostCard` | Solo aparece en home |
-
-### Elementos en `blog_page_locators.py`
-
-| Elemento | Justificación |
-|----------|---------------|
-| `postList` | Solo aparece en página de blog |
-| `postCard` | Cards de posts (aunque posts también los tienen, el contexto es diferente) |
-| `paginationControls` | Solo en listado de blog |
+| Archivo | Contiene | Usado en |
+|---------|----------|----------|
+| `post_metadata_locators.py` | post-meta, post-date, reading-time, tag-list | Home (featured + recent), Blog Listing, Post Detail |
+| `post_card_locators.py` | post-card, post-card-title, post-card-summary, post-card-read-more | Home (recent), Blog Listing |
+| `home_page_locators.py` | hero-*, featured-post-*, recent-posts-section | Home (únicamente) |
+| `blog_page_locators.py` | blog-post-list, pagination-* | Blog Listing (únicamente) |
+| `post_page_locators.py` | post-header, post-title, post-content, table-of-contents, post-navigation-* | Post Detail (únicamente) |
 
 ---
 
@@ -185,7 +176,6 @@ postCard = "[data-testid='post-card']"  # En contexto de "listado completo"
 Aunque ambos son "cards de posts", el contexto es diferente, por lo que cada uno está en su archivo específico.
 
 ---
-
 ## Notas
 
 Este ADR complementa ADR-002 (convención de nomenclatura). Juntos definen la estrategia completa de locators:
@@ -195,4 +185,4 @@ Este ADR complementa ADR-002 (convención de nomenclatura). Juntos definen la es
 
 ---
 
-**Última revisión**: 03-01-2026
+**Última revisión**: 07-01-2026
