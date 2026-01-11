@@ -24,3 +24,15 @@ class PlaywrightBrowserAdapter(BrowserPort):
 
     def is_visible(self, locator: str) -> bool:
         return self._page.locator(locator).is_visible()
+
+    def get_all_texts(self, locator: str) -> list[str]:
+        return self._page.locator(locator).all_inner_texts()
+
+    def get_element_count(self, locator: str) -> int:
+        return self._page.locator(locator).count()
+
+    def wait_for_element(self, locator: str, timeout: int = 10000) -> None:
+        self._page.locator(locator).wait_for(state="visible", timeout=timeout)
+
+    def wait_for_load_state(self, state: str = "networkidle") -> None:
+        self._page.wait_for_load_state(state)

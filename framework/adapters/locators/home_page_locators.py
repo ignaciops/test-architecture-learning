@@ -22,7 +22,7 @@ class HomePageLocators:
   heroDescription = "[data-testid='hero-description']"
 
   # Featured Posts Section
-  feauturedPostCard = "[data-testid='featured-post']"
+  featuredPostCard = "[data-testid='featured-post']"
   featuredPostImage = "[data-testid='featured-post-image']"
   featuredPostTitle = "[data-testid='featured-post-title']"
   featuredPostSummary = "[data-testid='featured-post-summary']"
