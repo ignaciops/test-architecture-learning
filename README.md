@@ -10,7 +10,7 @@ Dominar test architecture a través de un roadmap estructurado que cubre:
 
 | Mes | Tema | Talk | Blog | Tests | Status |
 |-----|------|------|------|-------|--------|
-| 01 | Foundations + Hexagonal | 28 Ene | ⏳ | 1/8 | 🚧 |
+| 01 | Foundations + Hexagonal | 28 Ene | ⏳ | 5/10 | 🚧 |
 | 02 | Architecture + Microservices | Feb | ⏳ | 0/10 | ⏳ |
 | 03 | Contract Testing | Mar | ⏳ | 0/8 | ⏳ |
 | 04 | Observability | - | ⏳ | 0/8 | ⏳ |
@@ -193,7 +193,7 @@ Ver [suts/README.md](suts/README.md) para setup específico de cada uno.
 
 | Métrica | Actual | Target | Status |
 |---------|--------|--------|--------|
-| Tests E2E | 1 | 8 (mes 1) | 🚧 12.5% |
+| Tests E2E | 5 | 10 (mes 1) | 🚧 50% |
 | Tests API | 0 | 10 (mes 2) | ⏳ |
 | Pipeline Time | N/A | <10 min | ⏳ |
 | Blog Posts | 0 | 15 (año) | ⏳ 0% |

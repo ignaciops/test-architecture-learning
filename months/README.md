@@ -53,7 +53,7 @@ _(Ninguno aún - primero se completará Mes 1 en enero)_
   - Call to action: crear repos de aprendizaje público
 - Blog: "Roadmap 2026: Test Architecture"
 
-**Progreso**: 1/8 tests (12.5%)
+**Progreso**: 5/10 tests (50%)
 
 **Documentación**:
 - [📄 README del mes](month-01-foundations/README.md)
