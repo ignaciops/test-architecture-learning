@@ -19,31 +19,29 @@ Construir la base del framework con arquitectura hexagonal básica, usando mi bl
 **Arquitectura Hexagonal Básica**
 
 - [x] `BrowserPort` (interface)
-- [ ] `PlaywrightBrowserAdapter` (implementación)
-- [ ] `NavigationScenario` (lógica de navegación)
-- [ ] `BlogListingScenario` (lógica de listado)
-- [ ] Locators centralizados (`common_locators.py`, `home_page_locators.py`)
+- [x] `PlaywrightBrowserAdapter` (implementación)
+- [x] `NavigationScenario` (lógica de navegación)
+- [x] `BlogListingScenario` (lógica de listado)
+- [x] Locators centralizados (`common_locators.py`, `home_page_locators.py`)
 
 ### Tests E2E
-**Target**: 6-8 tests contra el blog
+**Target**: 8 - 10 tests contra el blog
 
-- [ ] `test_home_page.py` (3 tests)
-  - [ ] test_user_can_navigate_to_home
-  - [ ] test_home_has_main_navigation
-  - [ ] test_home_displays_featured_content
-- [ ] `test_blog_listing.py` (2-3 tests)
-  - [ ] test_blog_listing_loads
-  - [ ] test_blog_displays_post_cards
-- [ ] `test_post_display.py` (2 tests)
-  - [ ] test_post_page_loads
-  - [ ] test_post_displays_content
+- [x] `test_home_page_loads_correctly.py` (1 test)
+  - [x] test_home_displays_all_sections
+- [x] `test_blog_listing.py` (3 tests)
+  - [x] test_blog_listing_displays
+  - [x] test_user_can_navigate_to_specific_post
+  - [x] test_all_posts_have_metadata
+- [x] `test_featured_post_navigation.py` (1 tests)
+  - [x] test_user_can_read_featured_post
 
-**Progreso**: 1/8 tests (12.5%)
+**Progreso**: 5/10 tests (50%)
 
 ### Infraestructura
 - [ ] Docker Compose setup
-- [ ] Allure reporting funcionando
-- [ ] Screenshots automáticos en fallos (opcional)
+- [x] Allure reporting funcionando
+- [x] Screenshots automáticos en fallos (opcional)
 - [ ] GitHub Actions básico (opcional - puede moverse a mes 2)
 
 ### Contenido Público
@@ -59,7 +57,7 @@ Construir la base del framework con arquitectura hexagonal básica, usando mi bl
 ## ✅ Criterios de Éxito
 
 **Obligatorios** (Must Have):
-- [ ] Arquitectura hexagonal básica implementada (ports + adapters + scenarios)
+- [x] Arquitectura hexagonal básica implementada (ports + adapters + scenarios)
 - [ ] Mínimo 6 tests E2E funcionando (75% del target)
 - [ ] Allure reports generándose correctamente
 - [ ] Lightning talk presentada
@@ -67,10 +65,12 @@ Construir la base del framework con arquitectura hexagonal básica, usando mi bl
 - [ ] Retrospectiva del mes escrita
 
 **Opcionales** (Nice to Have):
-- [ ] 8 tests completos (100% del target)
+- [ ] 10 tests completos (100% del target)
 - [ ] Docker Compose optimizado
 - [ ] Screenshots automáticos funcionando
 - [ ] CI básico en GitHub Actions
+- [ ] Service Layer con FakeBrowserAdapter
+- [ ] 4-6 tests edge-to-edge
 
 ---
 
@@ -152,11 +152,12 @@ docker-compose run tests pytest tests/ -v
 
 | Semana | Tiempo | Commits | Tests | Notas |
 |--------|--------|---------|-------|-------|
-| Semana 1 (1-7 Ene) | TBD | TBD | 1/8 | Setup inicial |
-| Semana 2 (8-14 Ene) | - | - | - | - |
-| Semana 3 (15-21 Ene) | - | - | - | - |
-| Semana 4 (22-31 Ene) | - | - | - | Cierre + retro |
+| Semana 1 (1-11 Ene) | 16 | 15 | 2/10 | Setup inicial |
+| Semana 2 (12-18 Ene) | 6 | 2 | 5/10 | Ports y Adapters mejorados, Adapters completos |
+| Semana 3 (19-25 Ene) | - | - | - | - |
+| Semana 4 (26 Ene - 1 Feb) | - | - | - | Cierre + retro |
 
+**Nota**: Semana 1 abarca 11 días ya que Enero inició a mitad de semana. Por tal motivo, semana 4 incluye incluye el domingo 1 de febrero.
 ---
 
 ## 🔗 Recursos del Mes
@@ -164,6 +165,7 @@ docker-compose run tests pytest tests/ -v
 ### Libros
 - **Python Testing with pytest** (Brian Okken) - Capítulos 1-5
 - **Clean Architecture** (Robert Martin) - Capítulos sobre Hexagonal
+- **Architecture Patterns with Python** (Harry Percival, Bob Gregory) - Capítulos 1 - 7
 
 ### Documentación Oficial
 - [Playwright Python Docs](https://playwright.dev/python/)
@@ -217,7 +219,7 @@ Ver: [ADR-003: Separación Common Locators](../../docs/architecture/decisions/AD
 | Ajuste | Razón | Impacto |
 |--------|-------|---------|
 | CI básico → Mes 2 | Priorizar tests y arquitectura | Bajo |
-| Target flexible (6-8 tests) | Situación familiar + aprendizaje | Mínimo: 6 tests aceptable |
+| Target flexible (8 - 10 tests) | Situación familiar + aprendizaje | Mínimo: 8 tests aceptable |
 
 ---
 
@@ -249,5 +251,5 @@ Ver: [ADR-003: Separación Common Locators](../../docs/architecture/decisions/AD
 
 ---
 
-**Última actualización**: 3 Enero 2026
+**Última actualización**: 18 Enero 2026
 **Próxima revisión**: 31 Enero 2026
