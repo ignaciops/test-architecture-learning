@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/playwright/python:v1.40.0-jammy
+FROM mcr.microsoft.com/playwright/python:v1.57.0-noble
 
 WORKDIR /app
 
@@ -9,7 +9,8 @@ RUN pip install --no-cache-dir -e .
 # Copy framework and tests
 COPY framework/ framework/
 COPY tests/ tests/
-COPY pytest.ini .
+
+RUN mkdir -p allure-results
 
 # Run tests by default
-CMD ["pytest", "tests/", "--alluredir=allure-results"]
+CMD ["pytest", "tests/", "-v", "--alluredir=allure-results"]

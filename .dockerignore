@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+
+# Testing artifacts
+.pytest_cache/
+allure-results/
+allure-reports/
+test-results/
+
+# IDE
+.vscode/
+.idea/
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+docs/
+months/
+*.md
+!README.md
+
+# CI/CD (por ahora)
+.github/

@@ -5,9 +5,9 @@ description = "Roadmap de aprendizaje de 12 meses para arquitectura de pruebas"
 authors = [
   {name = "Ignacio PS", email = "contacto@ignaciops.dev"}
 ]
-requires-python = ">=3.14"
+requires-python = ">=3.12"
 dependencies = [
-    "playwright>=1.40",
+    "playwright==1.57.0",
     "pytest>=9.0",
     "pytest-playwright>=0.7.1",
     "allure-pytest>=2.15.0",
