@@ -112,3 +112,24 @@ class PlaywrightBrowserAdapter(BrowserPort):
             data.append(item)
 
         return data
+
+    def get_all_texts_from_nested(
+        self,
+        parent_locator: str,
+        child_locator: str,
+        parent_index: int = 0
+    ) -> list[str]:
+        parent_element = self._page.locator(parent_locator).all()
+
+        if parent_index >= len(parent_element):
+            raise IndexError(
+                f"Parent index {parent_index} out of range."
+                f"Only {len(parent_element)} elements found."
+            )
+
+        parent = parent_element[parent_index]
+        children = parent.locator(child_locator).all()
+
+        return [
+            child.text_content().strip() for child in children if child.text_content()
+        ]

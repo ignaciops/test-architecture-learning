@@ -6,6 +6,7 @@ from framework.scenarios.navigation_scenario import NavigationScenario
 from framework.scenarios.home_page_scenario import HomePageScenario
 from framework.scenarios.post_page_scenario import PostPageScenario
 from framework.scenarios.blog_listing_scenario import BlogListingScenario
+from framework.scenarios.tag_page_scenario import TagPageScenario
 
 @pytest.fixture
 def browser_port(page: Page) -> PlaywrightBrowserAdapter:
@@ -53,6 +54,14 @@ def blog_listing_page_loaded(navigation_scenario, blog_listing_scenario):
     assert blog_listing_scenario.verify_blog_listing_loaded(), "La página de listado de blog no cargó correctamente."
 
   return blog_listing_scenario
+
+@pytest.fixture
+def tag_page_scenario(browser_port) -> TagPageScenario:
+  """
+  Fixture que provee el scenario de la página de tags con la dependencia inyectada.
+  """
+  return TagPageScenario(browser_port)
+
 
 # Hook para agregar capturas de pantalla on failure y agregarlos a Allure report
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
