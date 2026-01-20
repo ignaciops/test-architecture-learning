@@ -47,13 +47,13 @@ _(Ninguno aún - primero se completará Mes 1 en enero)_
 
 **Entregables**:
 - Framework: Ports, Adapters, Scenarios
-- Tests: 6-8 tests E2E del blog
+- Tests: 8 - 10 tests E2E del blog
 - **Talk**: "git init 'Mi proyecto 2026'" - Analogía Git para crecimiento personal
   - Usar tu roadmap como ejemplo práctico
   - Call to action: crear repos de aprendizaje público
 - Blog: "Roadmap 2026: Test Architecture"
 
-**Progreso**: 5/10 tests (50%)
+**Progreso**: 6/10 tests (60%)
 
 **Documentación**:
 - [📄 README del mes](month-01-foundations/README.md)

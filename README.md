@@ -10,7 +10,7 @@ Dominar test architecture a través de un roadmap estructurado que cubre:
 
 | Mes | Tema | Talk | Blog | Tests | Status |
 |-----|------|------|------|-------|--------|
-| 01 | Foundations + Hexagonal | 28 Ene | ⏳ | 5/10 | 🚧 |
+| 01 | Foundations + Hexagonal | 28 Ene | ⏳ | 6/10 | 🚧 |
 | 02 | Architecture + Microservices | Feb | ⏳ | 0/10 | ⏳ |
 | 03 | Contract Testing | Mar | ⏳ | 0/8 | ⏳ |
 | 04 | Observability | - | ⏳ | 0/8 | ⏳ |
@@ -57,7 +57,7 @@ Este framework prueba múltiples aplicaciones a lo largo del año:
 
 ### Prerequisites
 
-- Python 3.14+
+- Python 3.12+
 - Docker & Docker Compose
 - Node.js 20+ (para algunos SUTs)
 - Git
@@ -110,7 +110,6 @@ allure serve allure-results
 > 📝 **Nota sobre estructura**: En Mes 1 todos los tests están en `tests/`.
 > Desde Mes 2 se organizarán en `tests/e2e/` y `tests/api/` conforme el
 > framework crece.
-```
 
 ---
 
@@ -126,7 +125,7 @@ Por default, los tests del blog corren contra **producción** (`https://ignaciop
 pytest tests/e2e/blog/ -v
 
 # Override: contra local (si estás desarrollando)
-BLOG_BASE_URL=http://localhost:4321 pytest tests/e2e/blog/ -v
+BASE_URL=http://localhost:4321 pytest tests/e2e/blog/ -v
 ```
 
 **Para correr contra local**:
@@ -137,8 +136,53 @@ npm run dev  # Corre en http://localhost:4321
 
 # Terminal 2: Tests contra local
 cd test-architecture-learning
-BLOG_BASE_URL=http://localhost:4321 pytest tests/e2e/blog/ -v
+BASE_URL=http://localhost:4321 pytest tests/e2e/blog/ -v
 ```
+### Docker
+
+#### Quick Start
+```bash
+# Build imagen
+docker compose build
+
+# Ejecutar todos los tests
+docker compose run --rm tests
+
+# Ejecutar test específico
+docker compose run --rm tests pytest tests/test_home_page_loads_correctly.py -v
+```
+
+#### Testing contra el blog local
+
+Si tienes el blog corriendo localmente en `localhost:4321`:
+
+1. Descomentar `network_mode: "host"` en `docker-compose.yml`
+2. Ejecutar:
+```bash
+   BASE_URL=http://localhost:4321 docker compose run --rm tests
+```
+
+#### Ver reportes de Allure con historial
+```bash
+# 1. Ejecutar tests (genera resultados)
+docker compose run --rm tests
+
+# 2. Levantar servidor Allure
+docker compose up allure
+
+# En caso de querer que el contenedor de allure corra siempre
+# docker compose up allure -d
+
+# 3. Abrir en navegador
+# http://localhost:5050/allure-docker-service/latest-report
+
+# 4. Detener servidor cuando termines
+# Ctrl+C o docker compose down
+```
+**Nota:** El servicio Allure mantiene historial automáticamente (`KEEP_HISTORY=1`).
+Mientras no borres `allure-results/`, verás tendencias y comparativas entre ejecuciones.
+
+**Nota 2:** La integración completa de Docker será refinada en Mes 6 (CI/CD).
 
 ### Otros SUTs (Mes 2+)
 
@@ -193,7 +237,7 @@ Ver [suts/README.md](suts/README.md) para setup específico de cada uno.
 
 | Métrica | Actual | Target | Status |
 |---------|--------|--------|--------|
-| Tests E2E | 5 | 10 (mes 1) | 🚧 50% |
+| Tests E2E | 6 | 10 (mes 1) | 🚧 60% |
 | Tests API | 0 | 10 (mes 2) | ⏳ |
 | Pipeline Time | N/A | <10 min | ⏳ |
 | Blog Posts | 0 | 15 (año) | ⏳ 0% |
