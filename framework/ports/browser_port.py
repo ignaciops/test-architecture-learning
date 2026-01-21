@@ -146,3 +146,33 @@ class BrowserPort(ABC):
             # ]
         """
         pass
+
+    def get_all_texts_from_nested(
+        self,
+        parent_locator: str,
+        child_locator: str,
+        parent_index: int = 0
+    ) -> list[str]:
+        """
+        Obtiene TODOS los textos de elementos hijos dentro de un elemento padre específico.
+
+        Similar a get_text_from_nested, pero devuelve lista en vez de string.
+
+        Args:
+            parent_locator (str): Locator del elemento padre.
+            child_locator (str): Locator del elemento hijo.
+            parent_index (int): Índice del elemento padre si hay múltiples coincidencias.
+
+        Returns:
+            list[str]: Lista de textos de los elementos hijos.
+
+        Ejemplo:
+            # Obtener todos los tags del segundo blog post.
+            # tags = browser.get_all_texts_from_nested(
+            #     parent_locator="[data-testid='post-card']",
+            #     child_locator="[data-testid='tag-']",
+            #     parent_index=1
+            #)
+            # Returns: ["python", "testing", "automation"]
+        """
+        pass

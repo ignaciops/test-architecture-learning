@@ -35,11 +35,18 @@ Construir la base del framework con arquitectura hexagonal básica, usando mi bl
   - [x] test_all_posts_have_metadata
 - [x] `test_featured_post_navigation.py` (1 tests)
   - [x] test_user_can_read_featured_post
+- [x] `test_tag_navigation.py` (1 tests, 3 tests con parametrización)
+  - [x] test_user_can_filter_posts_by_tag_from_card
 
-**Progreso**: 5/10 tests (50%)
+**Progreso**: 6/10 tests (60%)
 
 ### Infraestructura
-- [ ] Docker Compose setup
+- [x] Docker Compose setup
+  - Dockerfile con Playwright v1.48
+  - docker-compose.yml con servicios tests + allure
+  - .dockerignore optimizado
+  - Allure con historial habilitado
+  - Documentación completa de uso
 - [x] Allure reporting funcionando
 - [x] Screenshots automáticos en fallos (opcional)
 - [ ] GitHub Actions básico (opcional - puede moverse a mes 2)
@@ -58,16 +65,16 @@ Construir la base del framework con arquitectura hexagonal básica, usando mi bl
 
 **Obligatorios** (Must Have):
 - [x] Arquitectura hexagonal básica implementada (ports + adapters + scenarios)
-- [ ] Mínimo 6 tests E2E funcionando (75% del target)
-- [ ] Allure reports generándose correctamente
+- [x] Mínimo 6 tests E2E funcionando (75% del target)
+- [x] Allure reports generándose correctamente
 - [ ] Lightning talk presentada
 - [ ] Blog post publicado
 - [ ] Retrospectiva del mes escrita
 
 **Opcionales** (Nice to Have):
 - [ ] 10 tests completos (100% del target)
-- [ ] Docker Compose optimizado
-- [ ] Screenshots automáticos funcionando
+- [x] Docker Compose optimizado
+- [x] Screenshots automáticos funcionando
 - [ ] CI básico en GitHub Actions
 - [ ] Service Layer con FakeBrowserAdapter
 - [ ] 4-6 tests edge-to-edge
@@ -105,10 +112,10 @@ allure serve allure-results
 ### Docker
 ```bash
 # Build and run
-docker-compose up --build
+docker compose up --build
 
 # Run tests only
-docker-compose run tests pytest tests/ -v
+docker compose run tests pytest tests/ -v
 ```
 
 ---
@@ -154,7 +161,7 @@ docker-compose run tests pytest tests/ -v
 |--------|--------|---------|-------|-------|
 | Semana 1 (1-11 Ene) | 16 | 15 | 2/10 | Setup inicial |
 | Semana 2 (12-18 Ene) | 6 | 2 | 5/10 | Ports y Adapters mejorados, Adapters completos |
-| Semana 3 (19-25 Ene) | - | - | - | - |
+| Semana 3 (19-25 Ene) | 5 | - | 1 | In progress... |
 | Semana 4 (26 Ene - 1 Feb) | - | - | - | Cierre + retro |
 
 **Nota**: Semana 1 abarca 11 días ya que Enero inició a mitad de semana. Por tal motivo, semana 4 incluye incluye el domingo 1 de febrero.
@@ -197,7 +204,7 @@ Ver: [ADR-003: Separación Common Locators](../../docs/architecture/decisions/AD
 
 | Herramienta | Versión | Propósito |
 |-------------|---------|-----------|
-| Python | 3.14+ | Lenguaje base |
+| Python | 3.12+ | Lenguaje base |
 | Playwright | 1.48+ | E2E testing |
 | Pytest | 8.3+ | Test framework |
 | pytest-playwright | latest | Plugin integración |
@@ -210,7 +217,6 @@ Ver: [ADR-003: Separación Common Locators](../../docs/architecture/decisions/AD
 
 - [ ] Docker Compose aún no optimizado
 - [ ] CI workflow pendiente (mover a mes 2)
-- [ ] Allure screenshots solo manual, no automático
 
 ---
 

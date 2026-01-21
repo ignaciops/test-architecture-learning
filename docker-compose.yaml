@@ -1,9 +1,23 @@
 services:
   tests:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - ./allure-results:/app/allure-results
     environment:
-      - BLOG_URL=
-    network_mode: "host"
-    command: pytest tests/e2e/blog/ --alluredir=allure-results
+      - BASE_URL=${BASE_URL:-https://ignaciops.dev}
+    # Quitar comentario si quieres testear contra localhost
+    # (e.g. blog corriendo con npm run dev en https://localhost:4321)
+    # network_mode: "host"
+
+  allure:
+    image: "frankescobar/allure-docker-service"
+    ports:
+      - "5050:5050"
+    volumes:
+      - ./allure-results:/app/allure-results
+      - ./allure-reports:/app/allure-reports
+    environment:
+      CHECK_RESULTS_EVERY_SECONDS: 5
+      KEEP_HISTORY: 1

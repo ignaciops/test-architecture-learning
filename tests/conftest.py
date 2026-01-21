@@ -6,6 +6,7 @@ from framework.scenarios.navigation_scenario import NavigationScenario
 from framework.scenarios.home_page_scenario import HomePageScenario
 from framework.scenarios.post_page_scenario import PostPageScenario
 from framework.scenarios.blog_listing_scenario import BlogListingScenario
+from framework.scenarios.tag_page_scenario import TagPageScenario
 
 @pytest.fixture
 def browser_port(page: Page) -> PlaywrightBrowserAdapter:
@@ -53,3 +54,34 @@ def blog_listing_page_loaded(navigation_scenario, blog_listing_scenario):
     assert blog_listing_scenario.verify_blog_listing_loaded(), "La página de listado de blog no cargó correctamente."
 
   return blog_listing_scenario
+
+@pytest.fixture
+def tag_page_scenario(browser_port) -> TagPageScenario:
+  """
+  Fixture que provee el scenario de la página de tags con la dependencia inyectada.
+  """
+  return TagPageScenario(browser_port)
+
+
+# Hook para agregar capturas de pantalla on failure y agregarlos a Allure report
+@pytest.hookimpl(tryfirst=True, hookwrapper=True)
+def pytest_runtest_makereport(item, call):
+  """
+  Hook que detecta fallos y marca la página para screenshot.
+  Se ejecuta después de cada fase del test (setup, call, teardown).
+  """
+  outcome = yield
+  rep = outcome.get_result()
+
+  if rep.when == "call" and rep.failed:
+    page: Page = item.funcargs.get("page")
+    if page:
+      try:
+        screenshot_bytes = page.screenshot()
+        allure.attach(
+          screenshot_bytes,
+          name=f"screenshot_on_failure_{item.name}",
+          attachment_type=allure.attachment_type.PNG
+        )
+      except Exception as e:
+        print(f"Error tomando screenshot: {e}")

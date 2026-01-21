@@ -18,7 +18,7 @@ class PostMetadataLocators:
     postReadTime = "[data-testid='reading-time']"
 
     # Tags
-    postTagList = "[data-testid='tag-list']"
+    postTagList = "[data-testid='post-card'] [data-testid='tag-list']"
     # Para tags individuales, usa un selector que acepte cualquier nombre
     # Ejemplo: page.locator("[data-testid^='tag-']")
     postTagPrefix = "[data-testid^='tag-']"  # Matches tag-python, tag-testing, etc.

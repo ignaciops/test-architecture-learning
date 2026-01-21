@@ -135,3 +135,35 @@ class BlogListingScenario:
         return False
 
     return True
+
+  def get_post_tags(self, index: int) -> list[str]:
+    """
+    Obtiene los tags de un post específico en el listado.
+
+    Args:
+        index (int): Índice del post en el listado (0-based).
+
+    Returns:
+        list[str]: Lista de tags asociados al post.
+    """
+    return self._browser.get_all_texts_from_nested(
+      self.post_metadata.postTagList,
+      self.post_metadata.postTagPrefix,
+      index
+    )
+
+  def click_tag(self, tag_name: str, post_index: int = 0) -> None:
+    """
+    Hace click en un tag especifico de un post.
+
+    Args:
+        tag_name (str): Nombre del tag (ej. "python")
+        post_index (int): Indice del post en el listado (0-based).
+    """
+    tag_selector = f"[data-testid='tag-{tag_name.lstrip('#').strip()}']"
+
+    self._browser.click_nested(
+      self.post_card.postCardContainer,
+      tag_selector,
+      post_index
+    )

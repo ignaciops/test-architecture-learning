@@ -14,10 +14,11 @@ ENV/
 .coverage
 htmlcov/
 *.cover
+test-results/
 
 # Allure
 allure-results/
-allure-report/
+allure-reports/
 
 # IDEs
 .vscode/
