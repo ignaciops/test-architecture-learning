@@ -1,7 +1,9 @@
+pytest_plugins = ["tests.fixtures.mobile_fixtures"]
+
 import pytest
 import allure
-from playwright.sync_api import Page
 
+from playwright.sync_api import Page
 from framework.adapters.playwright.browser_adapter import PlaywrightBrowserAdapter
 from framework.scenarios.navigation_scenario import NavigationScenario
 from framework.scenarios.home_page_scenario import HomePageScenario
@@ -82,7 +84,17 @@ def pytest_runtest_makereport(item, call):
   rep = outcome.get_result()
 
   if rep.when == "call" and rep.failed:
-    page: Page = item.funcargs.get("page")
+    page = None
+    for fixture_name, fixture_value in item.funcargs.items():
+      if isinstance(fixture_value, Page):
+        page = fixture_value
+        break
+
+    if not page:
+      page = item.funcargs.get("page") or \
+             item.funcargs.get("mobile_page") or \
+             item.funcargs.get("tablet_page")
+
     if page:
       try:
         screenshot_bytes = page.screenshot()
