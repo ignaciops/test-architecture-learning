@@ -7,7 +7,7 @@ class FakeBrowserAdapter(BrowserPort):
     Este adapter no valida, solo simula estado del DOM.
     """
 
-    def __init__(self, dom_state: dict = None):
+    def __init__(self, dom_state: dict = None, is_mobile: bool = False):
         """
         Args:
             dom_state (dict): Estado simulado del DOM.
@@ -18,6 +18,9 @@ class FakeBrowserAdapter(BrowserPort):
         self.calls = []
         self.navigations = []
         self.clicks = []
+        self._is_mobile = is_mobile
+        self._navigation_clicks = []
+
 
     def navigate_to(self, url: str) -> None:
         self.calls.append(("navigate_to", url))
@@ -33,6 +36,20 @@ class FakeBrowserAdapter(BrowserPort):
                 raise Exception(f"Element {locator} is not visible")
         else:
             raise Exception(f"Element {locator} not found")
+
+    def click_navigation_link(self, link_identifier: str) -> None:
+        """
+        Simula click en links de navegacion (desktop o mobile)
+        Solo hace track de la llamana sin simular si menu esta open o closed.
+        """
+        valid_links = {"blog", "projects", "about"}
+        if link_identifier not in valid_links:
+            raise ValueError(f"Link Indentifier '{link_identifier} no reconocido")
+
+        self._navigation_clicks.append({
+            "link": link_identifier,
+            "is_mobile": self._is_mobile
+        })
 
     def get_text(self, locator:str) -> str:
         self.calls.append(("get_text", locator))
