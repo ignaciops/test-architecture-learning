@@ -19,6 +19,13 @@ class CommonLocators:
   navbarAcercaLink = "[data-testid='nav-link-about']"
   navbarThemeToggle = "[data-testid='theme-toggle-button']"
 
+  # Hamburger menu
+  mobileMenuToggle = "[data-testid='mobile-menu-toggle']"
+  mobileMenu = "[data-testid='mobile-menu']"
+  mobileBlogLink = "[data-testid='mobile-nav-link-blog']"
+  mobileProyectosLink = "[data-testid='mobile-nav-link-portfolio']"
+  mobileAcercaLink = "[data-testid='mobile-nav-link-about']"
+
   # Footer
   footerContainer = "[data-testid='site-footer']"
   footerCopyrightText = "[data-testid='site-footer'] p"

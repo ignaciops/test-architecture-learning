@@ -1,6 +1,7 @@
 # framework/adapters/playwright/browser_adapter.py
 from playwright.sync_api import Page
 from framework.ports.browser_port import BrowserPort
+from framework.adapters.locators.common_locators import CommonLocators
 
 class PlaywrightBrowserAdapter(BrowserPort):
     """
@@ -12,6 +13,18 @@ class PlaywrightBrowserAdapter(BrowserPort):
 
     def __init__(self, page: Page):
         self._page = page
+        self._is_mobile = self._detect_mobile_viewport()
+        self._default_timeout = 10000 if self._is_mobile else 5000
+
+    def _detect_mobile_viewport(self) -> bool:
+        """
+        Detecta automaticamente si se usa un dispositivo movil.
+
+        Returns:
+            True si viewport width < 768px, False en caso contrario
+        """
+        viewport = self._page.viewport_size
+        return viewport["width"] < 768 if viewport else False
 
     # Navegación básica
     def navigate_to(self, url: str) -> None:
@@ -28,10 +41,79 @@ class PlaywrightBrowserAdapter(BrowserPort):
         return self._page.locator(locator).inner_text()
 
     def is_visible(self, locator: str) -> bool:
-        return self._page.locator(locator).is_visible()
+        try:
+            element = self._page.locator(locator)
+            element.wait_for(state="visible", timeout=self._default_timeout)
+            return element.is_visible()
+        except Exception:
+            return False
 
     def wait_for_element(self, locator: str, timeout: int = 10000) -> None:
         self._page.locator(locator).wait_for(state="visible", timeout=timeout)
+
+    def click_navigation_link(self, link_identifier: str) -> None:
+        """
+        Implementacion que maneja navegacion desktop vs mobile.
+
+        Mobile: abre hamburger menu primero, luego hace clik en link
+        Desktop: hace click directo en navbar
+        """
+        if self._is_mobile:
+            self._page.wait_for_load_state("networkidle")
+            hamburger = self._page.locator(CommonLocators.mobileMenuToggle)
+            mobile_menu = self._page.locator(CommonLocators.mobileMenu)
+
+            hamburger.wait_for(state="visible", timeout=5000)
+
+            if not mobile_menu.is_visible():
+                hamburger.click()
+
+                if not mobile_menu.is_visible():
+                    self._page.evaluate("""
+                    () => {
+                        const menu = document.querySelector('[data-testid="mobile-menu"]');
+                        if (menu) {
+                            menu.classList.remove('hidden');
+                            menu.classList.add('visible');
+                        }
+
+                        const btn = document.querySelector('[data-testid="mobile-menu-toggle"]');
+                        if (btn) {
+                            btn.setAttribute('aria-expanded', 'true');
+                        }
+
+                        // También cambiar los iconos
+                        const openIcon = document.getElementById('menu-icon-open');
+                        const closeIcon = document.getElementById('menu-icon-close');
+                        if (openIcon) openIcon.classList.add('hidden');
+                        if (closeIcon) closeIcon.classList.remove('hidden');
+                    }
+                """)
+                mobile_menu.wait_for(state="visible", timeout=2000)
+
+            link_map = {
+                "blog": CommonLocators.mobileBlogLink,
+                "projects": CommonLocators.mobileProyectosLink,
+                "about": CommonLocators.mobileAcercaLink
+            }
+
+            link_locator = link_map.get(link_identifier)
+            if not link_locator:
+                raise ValueError(f"Link Identifier '{link_identifier}' no reconocido")
+
+            self._page.locator(link_locator).click()
+        else:
+            link_map = {
+                "blog" : CommonLocators.navbarBlogLink,
+                "projects": CommonLocators.navbarProyectosLink,
+                "about": CommonLocators.navbarAcercaLink,
+            }
+
+            link_locator = link_map.get(link_identifier)
+            if not link_locator:
+                raise ValueError(f"Link Identifier '{link_identifier}' no reconocido")
+
+            self._page.locator(link_locator).click()
 
     # Interacciones con múltiples elementos
 

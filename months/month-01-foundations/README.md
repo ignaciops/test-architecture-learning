@@ -37,8 +37,15 @@ Construir la base del framework con arquitectura hexagonal básica, usando mi bl
   - [x] test_user_can_read_featured_post
 - [x] `test_tag_navigation.py` (1 tests, 3 tests con parametrización)
   - [x] test_user_can_filter_posts_by_tag_from_card
+- [x] `test_responsive_design.py` (1 test)
+  - [x] test_home_page_shows_elements
+- [x] `test_mobile_blog_listing.py` (3 tests same tests from `test_blog_listing.py`)
+  - [x] test_mobile_blog_listing_displays
+  - [x] test_mobile_user_can_navigate_to_specific_post
+  - [x] test_mobile_all_posts_have_metadata
 
-**Progreso**: 6/10 tests (60%)
+**Progreso**: 10/10 tests (100%)
+**Nota**: Los tests de `test_mobile_blog_listing.py` son los mismos de `test_blog_listing.py` para probar la navegación en móvil. En meses futuros se implementará parametrización y ejecución sepaada con CI/CD"
 
 ### Infraestructura
 - [x] Docker Compose setup
@@ -56,7 +63,7 @@ Construir la base del framework con arquitectura hexagonal básica, usando mi bl
   - Tema: Analogía Git → Crecimiento personal
   - Tu roadmap como ejemplo práctico
   - NO es presentación del roadmap (eso es el blog post)
-- [ ] Blog post "Roadmap 2026" publicado
+- [x] Blog post "Roadmap 2026" publicado
 - [ ] Video de talk obtenido (opcional)
 
 ---
@@ -72,12 +79,12 @@ Construir la base del framework con arquitectura hexagonal básica, usando mi bl
 - [ ] Retrospectiva del mes escrita
 
 **Opcionales** (Nice to Have):
-- [ ] 10 tests completos (100% del target)
+- [x] 10 tests completos (100% del target)
 - [x] Docker Compose optimizado
 - [x] Screenshots automáticos funcionando
 - [ ] CI básico en GitHub Actions
-- [ ] Service Layer con FakeBrowserAdapter
-- [ ] 4-6 tests edge-to-edge
+- [x] Service Layer con FakeBrowserAdapter
+- [x] 4-6 tests edge-to-edge
 
 ---
 
@@ -161,7 +168,7 @@ docker compose run tests pytest tests/ -v
 |--------|--------|---------|-------|-------|
 | Semana 1 (1-11 Ene) | 16 | 15 | 2/10 | Setup inicial |
 | Semana 2 (12-18 Ene) | 6 | 2 | 5/10 | Ports y Adapters mejorados, Adapters completos |
-| Semana 3 (19-25 Ene) | 5 | - | 1 | In progress... |
+| Semana 3 (19-25 Ene) | 5 | - | 10/10 | In progress... Nota: 3 tests de mobile son la adaptacion de test_blog_listing.|
 | Semana 4 (26 Ene - 1 Feb) | - | - | - | Cierre + retro |
 
 **Nota**: Semana 1 abarca 11 días ya que Enero inició a mitad de semana. Por tal motivo, semana 4 incluye incluye el domingo 1 de febrero.

@@ -1,7 +1,6 @@
 import allure
 import pytest
 
-@pytest.mark.home
 @pytest.mark.smoke
 @allure.epic('Blog E2E Tests')
 @allure.feature('Home Page')

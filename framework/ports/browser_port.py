@@ -56,6 +56,18 @@ class BrowserPort(ABC):
         """Regresa la cantidad de elementos que coinciden con el locator dado."""
         pass
 
+    @abstractmethod
+    def click_navigation_link(self, link_identifier: str) -> None:
+        """
+        Hace click en un link de navegacion.
+
+        El adapter determina la interaccion segun el viewport
+
+        Args:
+            link_identifier: Identificador del link ('blog', 'projects', 'about)
+        """
+        pass
+
     # Operaciones con elementos anidados
     @abstractmethod
     def get_text_from_nested(

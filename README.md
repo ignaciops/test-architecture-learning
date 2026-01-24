@@ -10,7 +10,7 @@ Dominar test architecture a través de un roadmap estructurado que cubre:
 
 | Mes | Tema | Talk | Blog | Tests | Status |
 |-----|------|------|------|-------|--------|
-| 01 | Foundations + Hexagonal | 28 Ene | ⏳ | 6/10 | 🚧 |
+| 01 | Foundations + Hexagonal | 28 Ene | ⏳ | 10/10 | 🚧 |
 | 02 | Architecture + Microservices | Feb | ⏳ | 0/10 | ⏳ |
 | 03 | Contract Testing | Mar | ⏳ | 0/8 | ⏳ |
 | 04 | Observability | - | ⏳ | 0/8 | ⏳ |
