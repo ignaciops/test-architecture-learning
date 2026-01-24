@@ -47,7 +47,7 @@ class TestBlogListing:
 
   @allure.story("Post Navigation")
   @allure.title("El usuario puede navegar a un post específico desde la página de listado de blog")
-  def test_user_can_navigate_to_specific_post(
+  def test_mobile_user_can_navigate_to_specific_post(
     self,
     mobile_navigation_scenario,
     mobile_blog_listing_scenario,
@@ -95,7 +95,7 @@ class TestBlogListing:
 
   @allure.story("Post Metadata Verification")
   @allure.title("Todos los posts en la página de listado de blog tienen los metadatos completos")
-  def test_all_posts_have_metadata(self, mobile_blog_listing_page_loaded):
+  def test_mobile_all_posts_have_metadata(self, mobile_blog_listing_page_loaded):
     """
     Verifica que todos los posts en la página de listado de blog tienen los metadatos completos.
     Los metadatos a verificar son: Título, Fecha, Resumen y Tiempo de lectura.

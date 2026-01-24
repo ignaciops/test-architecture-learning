@@ -4,7 +4,7 @@ import allure
 @pytest.mark.mobile
 @allure.epic("Responsive Design")
 @allure.feature("Mobile Home Page")
-def test_mobile_menu_opens_and_closes(
+def test_mobile_home_page_shows_elements(
   mobile_navigation_scenario,
   mobile_home_page_scenario):
   """
