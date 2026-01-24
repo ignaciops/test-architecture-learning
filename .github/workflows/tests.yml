@@ -1,0 +1,25 @@
+name: E2E & edge-to-edge tests
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: Run Pytest (Desktop & Mobile)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v4
+      - name: Configurar Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+      - name: Instalar Framework y Dependencias
+        run: pip install -e .
+      - name: Instalar Binarios de Playwright
+        run: playwright install --with-deps chromium webkit
+      - name: Ejecutar Pruebas
+        run: pytest
