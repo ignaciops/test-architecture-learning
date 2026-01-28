@@ -8,7 +8,7 @@
 
 ## 2026-01-19 | Parametrización de tests y la importancia de ser específico con selectors.
 
-**⏱️ Tiempo**: 3h | **📚 Fuente**: Sesión de Código y Debugging real | **🏷️ Tags**: #playwright #locators #debugging #pytest #parameters
+**⏱️ Tiempo**: 3 hrs | **📚 Fuente**: Sesión de Código y Debugging real | **🏷️ Tags**: #playwright #locators #debugging #pytest #parameters
 
 ### 💡 Main Takeaway
 Sobre parametrización:
@@ -49,7 +49,7 @@ Sobre selectores:
 
 ## 2026-01-19 | Docker Integration & Allure Screenshots
 
-**⏱️ Tiempo**: ~2hrs | **📚 Fuente**: Implementación práctica | **🏷️ Tags**: #docker #allure #infrastructure
+**⏱️ Tiempo**: ~2 hrs | **📚 Fuente**: Implementación práctica | **🏷️ Tags**: #docker #allure #infrastructure
 
 ### 💡 Main Takeaway
 > "Registros históricos disponibles desde homelab. Hasta ahora homelab va sobrado para el framework de pruebas."
@@ -85,7 +85,7 @@ def pytest_runtest_makereport(item, call):
 
 ---
 ## 2026-01-18 | Service Layer y Edge-to-Edge Testing
-⏱️ Tiempo: 6h (Fue sesión de estudio + código) | 📚 Fuente: Architecture Patterns with Python (Cap 4) | 🏷️ Tags: #service-layer #edge-to-edge #fake-adapters #hexagonal-architecture
+⏱️ Tiempo: 6 hrs (Fue sesión de estudio + código) | 📚 Fuente: Architecture Patterns with Python (Cap 4) | 🏷️ Tags: #service-layer #edge-to-edge #fake-adapters #hexagonal-architecture
 
 💡 Main Takeaway
 
@@ -170,7 +170,7 @@ Buscar más ejemplos de in-memory repositories aplicados a testing
 
 ## 2025-12-21 | Hexagonal Architecture - First Contact
 
-**⏱️ Tiempo**: 2h | **📚 Fuente**: Alistair Cockburn + Uncle Bob blogs | **🏷️ Tags**: #architecture #patterns #foundations
+**⏱️ Tiempo**: 2 hrs | **📚 Fuente**: Alistair Cockburn + Uncle Bob blogs | **🏷️ Tags**: #architecture #patterns #foundations
 
 ### 💡 Main Takeaway
 > "La arquitectura hexagonal separa QUÉ testear (scenarios/lógica) del CÓMO testearlo (adapters/herramientas). Los ports son el contrato entre ambos."
@@ -204,7 +204,7 @@ Leer sobre Dependency Injection en Python para entender mejor las fixtures de py
 
 ## 2025-12-22 | Playwright Auto-waiting
 
-**⏱️ Tiempo**: 2h | **📚 Fuente**: Playwright Python Docs | **🏷️ Tags**: #playwright #e2e #tools
+**⏱️ Tiempo**: 2 hrs | **📚 Fuente**: Playwright Python Docs | **🏷️ Tags**: #playwright #e2e #tools
 
 ### 💡 Main Takeaway
 > "Nunca usar time.sleep() en tests de Playwright. El auto-waiting espera que el elemento exista + sea visible + sea estable. Si el test falla por timing, el problema es el locator, no la espera."
@@ -232,7 +232,7 @@ Allure reporting: cómo agregar steps, screenshots automáticos en fallos, y cat
 ---
 ## 2026-01-06 | Domain Driven Design
 
-**⏱️ Tiempo**: 2h | **📚 Fuente**: Architecture Patterns with Python | **🏷️ Tags**: #architecture #ddd
+**⏱️ Tiempo**: 2 hrs | **📚 Fuente**: Architecture Patterns with Python | **🏷️ Tags**: #architecture #ddd
 
 ### 💡 Main Takeaway
 > "Los sistemas de software tienden al caos"

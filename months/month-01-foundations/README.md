@@ -56,7 +56,7 @@ Construir la base del framework con arquitectura hexagonal básica, usando mi bl
   - Documentación completa de uso
 - [x] Allure reporting funcionando
 - [x] Screenshots automáticos en fallos (opcional)
-- [ ] GitHub Actions básico (opcional - puede moverse a mes 2)
+- [x] GitHub Actions básico (opcional - puede moverse a mes 2)
 
 ### Contenido Público
 - [ ] Lightning talk presentada (28 enero)
@@ -75,14 +75,14 @@ Construir la base del framework con arquitectura hexagonal básica, usando mi bl
 - [x] Mínimo 6 tests E2E funcionando (75% del target)
 - [x] Allure reports generándose correctamente
 - [ ] Lightning talk presentada
-- [ ] Blog post publicado
-- [ ] Retrospectiva del mes escrita
+- [x] Blog post publicado
+- [x] Retrospectiva del mes escrita
 
 **Opcionales** (Nice to Have):
 - [x] 10 tests completos (100% del target)
 - [x] Docker Compose optimizado
 - [x] Screenshots automáticos funcionando
-- [ ] CI básico en GitHub Actions
+- [x] CI básico en GitHub Actions
 - [x] Service Layer con FakeBrowserAdapter
 - [x] 4-6 tests edge-to-edge
 
@@ -168,7 +168,7 @@ docker compose run tests pytest tests/ -v
 |--------|--------|---------|-------|-------|
 | Semana 1 (1-11 Ene) | 16 | 15 | 2/10 | Setup inicial |
 | Semana 2 (12-18 Ene) | 6 | 2 | 5/10 | Ports y Adapters mejorados, Adapters completos |
-| Semana 3 (19-25 Ene) | 5 | - | 10/10 | In progress... Nota: 3 tests de mobile son la adaptacion de test_blog_listing.|
+| Semana 3 (19-25 Ene) | ~17 | 15 | 10/10 | Done|
 | Semana 4 (26 Ene - 1 Feb) | - | - | - | Cierre + retro |
 
 **Nota**: Semana 1 abarca 11 días ya que Enero inició a mitad de semana. Por tal motivo, semana 4 incluye incluye el domingo 1 de febrero.
@@ -218,12 +218,6 @@ Ver: [ADR-003: Separación Common Locators](../../docs/architecture/decisions/AD
 | Allure-pytest | latest | Reporting |
 | Docker | latest | Containerización |
 
----
-
-## 🐛 Issues Conocidos
-
-- [ ] Docker Compose aún no optimizado
-- [ ] CI workflow pendiente (mover a mes 2)
 
 ---
 
