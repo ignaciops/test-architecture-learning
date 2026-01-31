@@ -33,7 +33,7 @@ Dominar test architecture a través de un roadmap estructurado que cubre:
 ├── suts/            # Documentación de sistemas bajo prueba
 ├── docs/            # Documentación general y arquitectura
 ├── months/          # Documentación y retrospectivas mensuales
-└── .github/         # CI/CD pipelines (desde mes 2)
+└── .github/         # CI/CD pipelines
 ```
 
 ---
@@ -206,7 +206,7 @@ Ver [suts/README.md](suts/README.md) para setup específico de cada uno.
 ## 🧪 Tech Stack
 
 ### Core
-- **Language**: Python 3.14+
+- **Language**: Python 3.12+
 - **E2E Testing**: Playwright
 - **API Testing**: HTTPX (desde mes 2)
 - **Test Framework**: Pytest
@@ -237,7 +237,7 @@ Ver [suts/README.md](suts/README.md) para setup específico de cada uno.
 
 | Métrica | Actual | Target | Status |
 |---------|--------|--------|--------|
-| Tests E2E | 6 | 10 (mes 1) | 🚧 60% |
+| Tests E2E | 10 | 10 (mes 1) | 100% |
 | Tests API | 0 | 10 (mes 2) | ⏳ |
 | Pipeline Time | N/A | <10 min | ⏳ |
 | Blog Posts | 0 | 15 (año) | ⏳ 0% |

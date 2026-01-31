@@ -53,7 +53,7 @@ _(Ninguno aún - primero se completará Mes 1 en enero)_
   - Call to action: crear repos de aprendizaje público
 - Blog: "Roadmap 2026: Test Architecture"
 
-**Progreso**: 6/10 tests (60%)
+**Progreso**: 10/10 tests (100%)
 
 **Documentación**:
 - [📄 README del mes](month-01-foundations/README.md)
@@ -309,7 +309,7 @@ _(Ninguno aún - primero se completará Mes 1 en enero)_
 
 | Mes | Tema | Tests | Talk/Video | Blog | Status |
 |-----|------|-------|------|------|--------|
-| 01 | Foundations | 1/8 | 28 Ene (DgoTecHub) | ⏳ | 🚧 |
+| 01 | Foundations | 10/0 | 28 Ene (DgoTecHub) | Sí | Completado |
 | 02 | Architecture | 0/10 | ⏳ | ⏳ | ⏳ |
 | 03 | Contracts | 0/8 | Video (no slot) | ⏳ | ⏳ |
 | 04 | Observability | 0/8 | - | ⏳ | ⏳ |
@@ -461,5 +461,5 @@ Retrospectiva completa del año:
 
 ---
 
-**Última actualización**: 3 Enero 2026
+**Última actualización**: 30 Enero 2026
 **Próxima actualización**: 31 Enero 2026 (después de completar Mes 1)

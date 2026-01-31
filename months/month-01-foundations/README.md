@@ -59,7 +59,7 @@ Construir la base del framework con arquitectura hexagonal básica, usando mi bl
 - [x] GitHub Actions básico (opcional - puede moverse a mes 2)
 
 ### Contenido Público
-- [ ] Lightning talk presentada (28 enero)
+- [x] Lightning talk presentada (28 enero)
   - Tema: Analogía Git → Crecimiento personal
   - Tu roadmap como ejemplo práctico
   - NO es presentación del roadmap (eso es el blog post)
@@ -74,7 +74,7 @@ Construir la base del framework con arquitectura hexagonal básica, usando mi bl
 - [x] Arquitectura hexagonal básica implementada (ports + adapters + scenarios)
 - [x] Mínimo 6 tests E2E funcionando (75% del target)
 - [x] Allure reports generándose correctamente
-- [ ] Lightning talk presentada
+- [x] Lightning talk presentada
 - [x] Blog post publicado
 - [x] Retrospectiva del mes escrita
 
@@ -238,9 +238,9 @@ Ver: [ADR-003: Separación Common Locators](../../docs/architecture/decisions/AD
 - [ ] Investigar Testcontainers
 
 ### Documentación
-- [ ] Escribir retrospectiva completa
-- [ ] Documentar lecciones aprendidas
-- [ ] Actualizar métricas finales
+- [x] Escribir retrospectiva completa
+- [x] Documentar lecciones aprendidas
+- [x] Actualizar métricas finales
 
 ### Contenido
 - [ ] Obtener video de lightning talk
@@ -258,5 +258,5 @@ Ver: [ADR-003: Separación Common Locators](../../docs/architecture/decisions/AD
 
 ---
 
-**Última actualización**: 18 Enero 2026
+**Última actualización**: 30 Enero 2026
 **Próxima revisión**: 31 Enero 2026
