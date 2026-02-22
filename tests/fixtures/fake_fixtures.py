@@ -3,7 +3,7 @@ from framework.adapters.fake.fake_browser_adapter import FakeBrowserAdapter
 from framework.adapters.locators.common_locators import CommonLocators
 from framework.adapters.locators.blog_page_locators import BlogPageLocators
 from framework.adapters.locators.post_card_locators import PostCardLocators
-from framework.scenarios.blog_listing_scenario import BlogListingScenario
+from framework.domain.scenarios.blog.blog_listing_scenario import BlogListingScenario
 
 # Fixtures para FakeBrowserAdapter
 @pytest.fixture

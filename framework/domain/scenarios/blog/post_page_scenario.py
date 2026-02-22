@@ -1,4 +1,4 @@
-from framework.ports.browser_port import BrowserPort
+from framework.domain.ports.browser_port import BrowserPort
 from framework.adapters.locators.post_page_locators import PostPageLocators
 from framework.adapters.locators.post_metadata_locators import PostMetadataLocators
 

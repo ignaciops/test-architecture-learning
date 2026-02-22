@@ -1,4 +1,4 @@
-from framework.ports.browser_port import BrowserPort
+from framework.domain.ports.browser_port import BrowserPort
 from framework.infrastructure.config import Config
 
 class NavigationScenario:

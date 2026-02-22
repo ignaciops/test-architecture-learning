@@ -1,4 +1,4 @@
-from framework.ports.browser_port import BrowserPort
+from framework.domain.ports.browser_port import BrowserPort
 from framework.adapters.locators.home_page_locators import HomePageLocators
 from framework.adapters.locators.common_locators import CommonLocators
 from framework.adapters.locators.post_card_locators import PostCardLocators

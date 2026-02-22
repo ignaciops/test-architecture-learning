@@ -2,10 +2,10 @@ import pytest
 import allure
 from playwright.sync_api import Page, Browser, Playwright
 from framework.adapters.playwright.browser_adapter import PlaywrightBrowserAdapter
-from framework.scenarios.navigation_scenario import NavigationScenario
-from framework.scenarios.home_page_scenario import HomePageScenario
-from framework.scenarios.post_page_scenario import PostPageScenario
-from framework.scenarios.blog_listing_scenario import BlogListingScenario
+from framework.domain.scenarios.blog.navigation_scenario import NavigationScenario
+from framework.domain.scenarios.blog.home_page_scenario import HomePageScenario
+from framework.domain.scenarios.blog.post_page_scenario import PostPageScenario
+from framework.domain.scenarios.blog.blog_listing_scenario import BlogListingScenario
 
 
 # Page fixtures

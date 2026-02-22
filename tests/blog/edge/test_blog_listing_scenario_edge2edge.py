@@ -1,5 +1,5 @@
 import pytest
-from framework.scenarios.blog_listing_scenario import BlogListingScenario
+from framework.domain.scenarios.blog.blog_listing_scenario import BlogListingScenario
 from framework.adapters.locators.post_card_locators import PostCardLocators
 
 class TestBlogListingScenarioEdge2Edge:

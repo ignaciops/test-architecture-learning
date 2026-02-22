@@ -5,11 +5,11 @@ import allure
 
 from playwright.sync_api import Page
 from framework.adapters.playwright.browser_adapter import PlaywrightBrowserAdapter
-from framework.scenarios.navigation_scenario import NavigationScenario
-from framework.scenarios.home_page_scenario import HomePageScenario
-from framework.scenarios.post_page_scenario import PostPageScenario
-from framework.scenarios.blog_listing_scenario import BlogListingScenario
-from framework.scenarios.tag_page_scenario import TagPageScenario
+from framework.domain.scenarios.blog.navigation_scenario import NavigationScenario
+from framework.domain.scenarios.blog.home_page_scenario import HomePageScenario
+from framework.domain.scenarios.blog.post_page_scenario import PostPageScenario
+from framework.domain.scenarios.blog.blog_listing_scenario import BlogListingScenario
+from framework.domain.scenarios.blog.tag_page_scenario import TagPageScenario
 
 @pytest.fixture
 def browser_port(page: Page) -> PlaywrightBrowserAdapter:
