@@ -1,4 +1,4 @@
-from framework.ports.browser_port import BrowserPort
+from framework.domain.ports.browser_port import BrowserPort
 from framework.adapters.locators.tag_page_locators import TagPageLocators
 
 class TagPageScenario:

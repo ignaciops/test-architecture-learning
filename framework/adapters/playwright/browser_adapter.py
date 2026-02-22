@@ -1,6 +1,6 @@
 # framework/adapters/playwright/browser_adapter.py
 from playwright.sync_api import Page
-from framework.ports.browser_port import BrowserPort
+from framework.domain.ports.browser_port import BrowserPort
 from framework.adapters.locators.common_locators import CommonLocators
 
 class PlaywrightBrowserAdapter(BrowserPort):
