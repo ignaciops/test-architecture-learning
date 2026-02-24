@@ -1,4 +1,4 @@
-pytest_plugins = ["tests.fixtures.mobile_fixtures", "tests.fixtures.fake_fixtures"]
+pytest_plugins = ["tests.fixtures.mobile_fixtures", "tests.fixtures.fake_fixtures", "tests.fixtures.api_fixtures"]
 
 import pytest
 import allure

@@ -34,4 +34,9 @@ class BadgeAwardingScenario:
          "event_id": event_id
       })
 
+   def user_has_badge(self, user_id: int, badge_name: str) -> bool:
+      response = self._users.get_user_badges(user_id)
+      badges = response.json_body["badges"]
+      return any(entry["badge"]["name"] == badge_name for entry in badges)
+
 
